@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 
-const API_BASE = 'http://localhost:5000/api/v1/payroll';
+const API_BASE = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/payroll`;
 const ACTIVE_MONTH = 11;
 const ACTIVE_YEAR = 2026;
 

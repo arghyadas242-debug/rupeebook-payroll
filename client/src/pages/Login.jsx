@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_AUTH = 'http://localhost:5000/api/v1/auth';
+const API_AUTH = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth`;
 
 export default function Login() {
   const navigate = useNavigate();
