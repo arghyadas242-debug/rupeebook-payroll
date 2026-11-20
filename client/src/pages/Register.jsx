@@ -96,7 +96,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9] text-[#1a1c1c] font-['Inter',sans-serif] antialiased flex flex-col justify-between selection:bg-[#acf847] selection:text-[#0F172A]">
+    <div className="min-h-screen bg-[#f9f9f9] dark:bg-[#0B1120] text-[#1a1c1c] dark:text-[#F8FAFC] font-['Inter',sans-serif] antialiased flex flex-col justify-between">
       {/* FIXED TOP HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#f9f9f9]/95 backdrop-blur-md border-b-[1.5px] border-[#0F172A]">
         <div className="h-20 max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">

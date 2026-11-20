@@ -26,9 +26,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9] text-[#1a1c1c] font-['Inter',sans-serif] antialiased selection:bg-[#acf847] selection:text-[#0F172A]">
+    <div className="min-h-screen bg-[#f9f9f9] dark:bg-[#0B1120] text-[#1a1c1c] dark:text-[#F8FAFC] font-['Inter',sans-serif] antialiased">
       {/* FIXED TOP HEADER */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-white border-b-[1.5px] border-[#0F172A]">
+      <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#111827] border-b-[1.5px] border-[#0F172A] dark:border-[#475569]">
         <div className="h-20 max-w-[1440px] mx-auto px-6 md:px-8 flex items-center justify-between gap-4">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-4 shrink-0">
@@ -36,38 +36,38 @@ export default function Home() {
               <span className="text-[18px] text-white font-bold tracking-wider">RB</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[18px] text-[#1a1c1c] font-extrabold uppercase leading-none tracking-tight">
+              <span className="text-[18px] text-[#1a1c1c] dark:text-[#F8FAFC] font-extrabold uppercase leading-none tracking-tight">
                 RupeeBook
               </span>
-              <span className="text-[10px] text-[#444657] font-bold tracking-widest mt-0.5 uppercase">
+              <span className="text-[10px] text-[#444657] dark:text-[#CBD5E1] font-bold tracking-widest mt-0.5 uppercase">
                 MULTI-ENTITY TREASURY
               </span>
             </div>
           </Link>
 
           {/* Center Nav */}
-          <nav className="hidden lg:flex items-center gap-1 p-1 border-[1.5px] border-[#0F172A] bg-[#f9f9f9]">
+          <nav className="hidden lg:flex items-center gap-1 p-1 border-[1.5px] border-[#0F172A] dark:border-[#475569] bg-[#f9f9f9] dark:bg-[#0B1120]">
             <a
               href="#statutory-engine"
-              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] hover:text-[#1a1c1c] hover:bg-[#f3f3f4]"
+              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] dark:text-[#CBD5E1] hover:text-[#1a1c1c] dark:hover:text-[#F8FAFC] hover:bg-[#f3f3f4] dark:hover:bg-[#1E293B]"
             >
               Statutory Engine
             </a>
             <a
               href="#double-entry-gl"
-              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] hover:text-[#1a1c1c] hover:bg-[#f3f3f4]"
+              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] dark:text-[#CBD5E1] hover:text-[#1a1c1c] dark:hover:text-[#F8FAFC] hover:bg-[#f3f3f4] dark:hover:bg-[#1E293B]"
             >
               Double-Entry GL
             </a>
             <a
               href="#neft-treasury"
-              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] hover:text-[#1a1c1c] hover:bg-[#f3f3f4]"
+              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] dark:text-[#CBD5E1] hover:text-[#1a1c1c] dark:hover:text-[#F8FAFC] hover:bg-[#f3f3f4] dark:hover:bg-[#1E293B]"
             >
               NEFT Treasury
             </a>
             <a
               href="#architecture"
-              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] hover:text-[#1a1c1c] hover:bg-[#f3f3f4]"
+              className="px-4 py-1.5 text-[14px] font-semibold text-[#444657] dark:text-[#CBD5E1] hover:text-[#1a1c1c] dark:hover:text-[#F8FAFC] hover:bg-[#f3f3f4] dark:hover:bg-[#1E293B]"
             >
               Architecture
             </a>
@@ -81,7 +81,7 @@ export default function Home() {
               onClick={toggleTheme}
               title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
               aria-label="Toggle color theme"
-              className="w-9 h-9 border-[1.5px] border-[#0F172A] bg-white text-[#1a1c1c] flex items-center justify-center shadow-[2px_2px_0px_#0F172A] hover:bg-[#eeeeee] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="w-9 h-9 border-[1.5px] border-[#0F172A] dark:border-[#475569] bg-white dark:bg-[#111827] text-[#1a1c1c] dark:text-[#F8FAFC] flex items-center justify-center shadow-[2px_2px_0px_#0F172A] dark:shadow-[2px_2px_0px_#334155] hover:bg-[#eeeeee] dark:hover:bg-[#1E293B] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
             >
               <span className="material-symbols-outlined text-[19px]">
                 {theme === 'dark' ? 'light_mode' : 'dark_mode'}
@@ -90,7 +90,7 @@ export default function Home() {
 
             <Link
               to="/login"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 border-[1.5px] border-[#0F172A] bg-white text-[14px] font-semibold text-[#1a1c1c] hover:bg-[#eeeeee] shadow-[2px_2px_0px_#0F172A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 border-[1.5px] border-[#0F172A] dark:border-[#475569] bg-white dark:bg-[#111827] text-[14px] font-semibold text-[#1a1c1c] dark:text-[#F8FAFC] hover:bg-[#eeeeee] dark:hover:bg-[#1E293B] shadow-[2px_2px_0px_#0F172A] dark:shadow-[2px_2px_0px_#334155] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
             >
               Sign In
             </Link>
@@ -144,11 +144,11 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h1 className="font-['Playfair_Display',serif] text-[36px] sm:text-[48px] font-extrabold text-[#0F172A] tracking-tight leading-[1.12] max-w-2xl">
+                <h1 className="font-['Playfair_Display',serif] text-[36px] sm:text-[48px] font-extrabold text-[#0F172A] dark:text-[#F8FAFC] tracking-tight leading-[1.12] max-w-2xl">
                   Precision Payroll &amp; Double-Entry Treasury.
                 </h1>
 
-                <p className="text-[16px] leading-[24px] text-[#444657] max-w-xl">
+                <p className="text-[16px] leading-[24px] text-[#444657] dark:text-[#CBD5E1] max-w-xl">
                   Automate complex Indian statutory payroll with zero reconciliation drift. From
                   prorated LOP attendance and automated EPF/ESIC/PT/TDS challans to instant
                   host-to-host NEFT bank disbursement and atomic general ledger postings.
@@ -158,36 +158,36 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <Link
                     to="/login"
-                    className="inline-flex items-center justify-center px-6 py-3.5 bg-[#0033ff] text-white text-[14px] font-bold border-2 border-[#0F172A] shadow-[4px_4px_0px_#0F172A] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform"
+                    className="inline-flex items-center justify-center px-6 py-3.5 bg-[#0033ff] text-white text-[14px] font-bold border-2 border-[#0F172A] dark:border-[#475569] shadow-[4px_4px_0px_#0F172A] dark:shadow-[4px_4px_0px_#334155] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform"
                   >
                     Enter Treasury Console →
                   </Link>
                   <a
                     href="#voucher-matrix"
-                    className="inline-flex items-center justify-center px-6 py-3.5 bg-white text-[#0F172A] text-[14px] font-bold border-2 border-[#0F172A] shadow-[4px_4px_0px_#0F172A] hover:bg-[#f3f3f4] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform"
+                    className="inline-flex items-center justify-center px-6 py-3.5 bg-white dark:bg-[#111827] text-[#0F172A] dark:text-[#F8FAFC] text-[14px] font-bold border-2 border-[#0F172A] dark:border-[#475569] shadow-[4px_4px_0px_#0F172A] dark:shadow-[4px_4px_0px_#334155] hover:bg-[#f3f3f4] dark:hover:bg-[#1E293B] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform"
                   >
                     Inspect Live Ledger
                   </a>
                 </div>
 
                 {/* Enterprise Proof Strip */}
-                <div className="pt-4 border-t-[1.5px] border-[#0F172A] flex flex-wrap items-center gap-x-4 gap-y-2 text-[#0F172A] text-[12px] font-semibold">
+                <div className="pt-4 border-t-[1.5px] border-[#0F172A] dark:border-[#475569] flex flex-wrap items-center gap-x-4 gap-y-2 text-[#0F172A] dark:text-[#F8FAFC] text-[12px] font-semibold">
                   <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[#0024c1] text-[18px]">
+                    <span className="material-symbols-outlined text-[#0024c1] dark:text-[#ACF847] text-[18px]">
                       verified
                     </span>
                     <span>240+ Multi-Entity Indian Corporates</span>
                   </div>
                   <span className="text-[#c4c5da]">•</span>
                   <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[#0024c1] text-[18px]">
+                    <span className="material-symbols-outlined text-[#0024c1] dark:text-[#ACF847] text-[18px]">
                       account_balance
                     </span>
                     <span>₹480 Cr+ Annual Disbursed</span>
                   </div>
                   <span className="text-[#c4c5da]">•</span>
                   <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[#0024c1] text-[18px]">
+                    <span className="material-symbols-outlined text-[#0024c1] dark:text-[#ACF847] text-[18px]">
                       shield
                     </span>
                     <span>99.99% Ledger Uptime</span>
@@ -197,13 +197,13 @@ export default function Home() {
 
               {/* Right Column: Live Balanced Voucher Card (5 Cols) */}
               <div className="lg:col-span-5 w-full" id="voucher-matrix">
-                <div className="bg-white border-2 border-[#0F172A] shadow-[6px_6px_0px_#0F172A] p-5 sm:p-6 flex flex-col gap-4">
-                  <div className="flex items-center justify-between pb-3 border-b-2 border-[#0F172A] gap-2">
+                <div className="bg-white dark:bg-[#111827] border-2 border-[#0F172A] dark:border-[#475569] shadow-[6px_6px_0px_#0F172A] dark:shadow-[6px_6px_0px_#334155] p-5 sm:p-6 flex flex-col gap-4">
+                  <div className="flex items-center justify-between pb-3 border-b-2 border-[#0F172A] dark:border-[#475569] gap-2">
                     <div className="flex flex-col">
-                      <span className="font-mono text-[11px] font-bold text-[#444657] tracking-wider">
+                      <span className="font-mono text-[11px] font-bold text-[#444657] dark:text-[#CBD5E1] tracking-wider">
                         VOUCHER ID: RB-2026-11-V402
                       </span>
-                      <span className="text-[12px] text-[#0F172A] font-bold">
+                      <span className="text-[12px] text-[#0F172A] dark:text-[#F8FAFC] font-bold">
                         Pay Run: November 2026 • Batch Clearing
                       </span>
                     </div>
@@ -213,26 +213,26 @@ export default function Home() {
                   </div>
 
                   {/* DR / CR T-Account Summary Grid */}
-                  <div className="grid grid-cols-2 gap-2 bg-[#f3f3f4] p-3 border-[1.5px] border-[#0F172A]">
-                    <div className="flex flex-col border-r-[1.5px] border-[#0F172A] pr-3">
-                      <span className="text-[10px] uppercase font-bold text-[#444657]">
+                  <div className="grid grid-cols-2 gap-2 bg-[#f3f3f4] dark:bg-[#1E293B] p-3 border-[1.5px] border-[#0F172A] dark:border-[#475569]">
+                    <div className="flex flex-col border-r-[1.5px] border-[#0F172A] dark:border-[#475569] pr-3">
+                      <span className="text-[10px] uppercase font-bold text-[#444657] dark:text-[#CBD5E1]">
                         TOTAL DEBITS (DR)
                       </span>
-                      <span className="text-[18px] tabular-nums font-black text-[#0F172A] mt-0.5">
+                      <span className="text-[18px] tabular-nums font-black text-[#0F172A] dark:text-[#F8FAFC] mt-0.5">
                         ₹8,67,002.00
                       </span>
-                      <span className="text-[10px] text-[#444657] font-mono">
+                      <span className="text-[10px] text-[#444657] dark:text-[#CBD5E1] font-mono">
                         EXP-501 Sal &amp; Wages
                       </span>
                     </div>
                     <div className="flex flex-col pl-3">
-                      <span className="text-[10px] uppercase font-bold text-[#444657]">
+                      <span className="text-[10px] uppercase font-bold text-[#444657] dark:text-[#CBD5E1]">
                         TOTAL CREDITS (CR)
                       </span>
-                      <span className="text-[18px] tabular-nums font-black text-[#0F172A] mt-0.5">
+                      <span className="text-[18px] tabular-nums font-black text-[#0F172A] dark:text-[#F8FAFC] mt-0.5">
                         ₹8,67,002.00
                       </span>
-                      <span className="text-[10px] text-[#444657] font-mono">
+                      <span className="text-[10px] text-[#444657] dark:text-[#CBD5E1] font-mono">
                         LIAB-201..205 Net &amp; Pools
                       </span>
                     </div>

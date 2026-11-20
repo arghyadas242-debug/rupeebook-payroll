@@ -210,13 +210,26 @@ html.dark body {
   --color-outline-variant: #334155;
 }
 
-/* 2. Primary Headings & Text */
+/* 2. Universal Dark Text Readability Default */
+html.dark p,
+html.dark span,
+html.dark a,
 html.dark h1,
 html.dark h2,
 html.dark h3,
 html.dark h4,
 html.dark h5,
 html.dark h6,
+html.dark label,
+html.dark td,
+html.dark th,
+html.dark button,
+html.dark li,
+html.dark div {
+  color: #F8FAFC !important;
+}
+
+/* Explicit Primary Headings & Text Classes */
 html.dark [class*="text-[#0F172A]" i],
 html.dark [class*="text-[#111827]" i],
 html.dark [class*="text-[#1a1c1c]" i],
@@ -241,6 +254,20 @@ html.dark [class*="text-[#444657]" i],
 html.dark [class*="text-[#747689]" i],
 html.dark .text-on-surface-variant {
   color: #CBD5E1 !important;
+}
+
+/* Override any inline dark style colors */
+html.dark [style*="color: rgb(15, 23, 42)"],
+html.dark [style*="color: rgb(17, 24, 39)"],
+html.dark [style*="color: #0F172A" i],
+html.dark [style*="color: #111827" i],
+html.dark [style*="color:#0F172A" i],
+html.dark [style*="color:#111827" i],
+html.dark [style*="color: #1a1c1c" i],
+html.dark [style*="color:#1a1c1c" i],
+html.dark [style*="color: black"],
+html.dark [style*="color:#000"] {
+  color: #F8FAFC !important;
 }
 
 /* 4. Light Card / Nav / Canvas Surfaces */
@@ -393,9 +420,29 @@ html.dark .material-symbols-outlined {
   color: inherit;
 }
 
-/* 9. Preserve Lime (#ACF847) & Cobalt (#0033FF) Accents (MUST come AFTER all rules above) */
-html.dark [class*="bg-[#ACF847]" i],
-html.dark [class*="bg-[#ACF847]" i] *,
+/* 9. Sun/Moon Toggle, Sign In, and Inspect Live Ledger Button Polish */
+html.dark button[aria-label="Toggle color theme"],
+html.dark button[aria-label="Toggle theme"],
+html.dark a[href="#voucher-matrix"] {
+  background-color: #111827 !important;
+  color: #F8FAFC !important;
+  border-color: #475569 !important;
+}
+
+html.dark button[aria-label="Toggle color theme"] .material-symbols-outlined,
+html.dark button[aria-label="Toggle theme"] .material-symbols-outlined {
+  color: #F8FAFC !important;
+}
+
+/* 10. PRESERVE LIME (#ACF847) & COBALT (#0033FF) ACCENTS (MUST COME AFTER ALL RULES ABOVE) */
+html.dark [class~="bg-[#ACF847]" i],
+html.dark [class~="bg-[#ACF847]" i] *,
+html.dark [class~="bg-[#acf847]" i],
+html.dark [class~="bg-[#acf847]" i] *,
+html.dark [class*="bg-[#ACF847]" i]:not([class*="selection:"]),
+html.dark [class*="bg-[#ACF847]" i]:not([class*="selection:"]) *,
+html.dark [class*="bg-[#acf847]" i]:not([class*="selection:"]),
+html.dark [class*="bg-[#acf847]" i]:not([class*="selection:"]) *,
 html.dark .bg-secondary-container,
 html.dark .bg-secondary-container *,
 html.dark .bg-secondary-fixed,
@@ -403,17 +450,25 @@ html.dark .bg-secondary-fixed * {
   color: #0F172A !important;
 }
 
-html.dark [class*="bg-[#ACF847]" i],
+html.dark [class~="bg-[#ACF847]" i],
+html.dark [class~="bg-[#acf847]" i],
+html.dark [class*="bg-[#ACF847]" i]:not([class*="selection:"]),
+html.dark [class*="bg-[#acf847]" i]:not([class*="selection:"]),
 html.dark .bg-secondary-container,
 html.dark .bg-secondary-fixed {
   background-color: #ACF847 !important;
   border-color: #0F172A !important;
 }
 
+/* Cobalt Blue Badges & Buttons (#0033FF / #0033ff / #0024C1 / #0024c1) */
 html.dark [class*="bg-[#0033FF]" i],
 html.dark [class*="bg-[#0033FF]" i] *,
+html.dark [class*="bg-[#0033ff]" i],
+html.dark [class*="bg-[#0033ff]" i] *,
 html.dark [class*="bg-[#0024C1]" i],
 html.dark [class*="bg-[#0024C1]" i] *,
+html.dark [class*="bg-[#0024c1]" i],
+html.dark [class*="bg-[#0024c1]" i] *,
 html.dark .bg-primary,
 html.dark .bg-primary *,
 html.dark .bg-primary-container,
@@ -422,7 +477,9 @@ html.dark .bg-primary-container * {
 }
 
 html.dark [class*="bg-[#0033FF]" i],
+html.dark [class*="bg-[#0033ff]" i],
 html.dark [class*="bg-[#0024C1]" i],
+html.dark [class*="bg-[#0024c1]" i],
 html.dark .bg-primary,
 html.dark .bg-primary-container {
   background-color: #0033FF !important;
