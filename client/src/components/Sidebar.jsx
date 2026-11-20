@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Sidebar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     {
@@ -137,6 +139,22 @@ export default function Sidebar() {
             Active
           </span>
         </div>
+
+        {/* Theme Toggle Action */}
+        <button
+          type="button"
+          onClick={toggleTheme}
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          className="w-full mt-1 py-2 px-3 bg-surface-container-lowest text-on-surface font-label-md text-label-md font-bold brutal-border-thin brutal-btn-hover brutal-btn-active flex items-center justify-between transition-all cursor-pointer"
+        >
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-[18px]">
+              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+            </span>
+            <span>{theme === 'dark' ? 'Light Theme' : 'Dark Theme'}</span>
+          </div>
+          <span className="text-[13px]">{theme === 'dark' ? '☀️' : '🌙'}</span>
+        </button>
 
         {/* Sign Out Action */}
         <button

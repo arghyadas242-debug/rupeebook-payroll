@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Register() {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   const [fullName, setFullName] = useState('Arghya Das');
   const [email, setEmail] = useState('arghya@rupeebook.in');
@@ -112,7 +114,20 @@ export default function Register() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Neo-Brutalist Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label="Toggle color theme"
+              className="w-9 h-9 border-[1.5px] border-[#0F172A] bg-white text-[#1a1c1c] flex items-center justify-center shadow-[2px_2px_0px_#0F172A] hover:bg-[#eeeeee] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[19px]">
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+
             <Link
               to="/login"
               className="text-[14px] font-semibold text-[#444657] hover:text-[#1a1c1c] px-4 py-2 bg-white border-[1.5px] border-[#0F172A] shadow-[2px_2px_0px_#0F172A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const API_AUTH = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth`;
 
 export default function Login() {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
   const [email, setEmail] = useState('cfo@rupeebook.in');
   const [password, setPassword] = useState('admin123');
   const [showPassword, setShowPassword] = useState(false);
@@ -74,12 +76,27 @@ export default function Login() {
           </div>
         </Link>
 
-        <Link
-          to="/"
-          className="px-4 py-2 border-[1.5px] border-[#0F172A] bg-white text-[13px] font-bold shadow-[2px_2px_0px_#0F172A] hover:bg-[#f3f3f4]"
-        >
-          ← Back to Home
-        </Link>
+        <div className="flex items-center gap-3">
+          {/* Neo-Brutalist Theme Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            aria-label="Toggle color theme"
+            className="w-9 h-9 border-[1.5px] border-[#0F172A] bg-white text-[#1a1c1c] flex items-center justify-center shadow-[2px_2px_0px_#0F172A] hover:bg-[#f3f3f4] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[19px]">
+              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+            </span>
+          </button>
+
+          <Link
+            to="/"
+            className="px-4 py-2 border-[1.5px] border-[#0F172A] bg-white text-[13px] font-bold shadow-[2px_2px_0px_#0F172A] hover:bg-[#f3f3f4]"
+          >
+            ← Back to Home
+          </Link>
+        </div>
       </header>
 
       {/* Centered Split Login Card */}

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Home() {
+  const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     // Load Playfair Display, Inter & Material Symbols if not already in index.html
     const fontHref =
@@ -73,6 +75,19 @@ export default function Home() {
 
           {/* Right Auth & Console CTAs */}
           <div className="flex items-center gap-3 md:gap-4 shrink-0">
+            {/* Neo-Brutalist Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label="Toggle color theme"
+              className="w-9 h-9 border-[1.5px] border-[#0F172A] bg-white text-[#1a1c1c] flex items-center justify-center shadow-[2px_2px_0px_#0F172A] hover:bg-[#eeeeee] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[19px]">
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+
             <Link
               to="/login"
               className="hidden sm:inline-flex items-center justify-center px-4 py-2 border-[1.5px] border-[#0F172A] bg-white text-[14px] font-semibold text-[#1a1c1c] hover:bg-[#eeeeee] shadow-[2px_2px_0px_#0F172A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"

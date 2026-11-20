@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-on-tertiary-container: #c6cde2;
   --color-on-background: #1a1c1c;
@@ -176,4 +178,247 @@
   body {
     background: #ffffff !important;
   }
+}
+
+/* ==========================================================================
+   NEO-BRUTALIST DARK MODE PALETTE
+   ========================================================================== */
+html.dark {
+  color-scheme: dark;
+  background-color: #0B1120;
+  color: #F8FAFC;
+}
+
+.dark {
+  --color-background: #0B1120;
+  --color-surface: #0B1120;
+  --color-surface-bright: #111827;
+  --color-surface-container: #1E293B;
+  --color-surface-container-low: #172033;
+  --color-surface-container-lowest: #111827;
+  --color-surface-container-high: #243046;
+  --color-surface-container-highest: #334155;
+  --color-surface-variant: #1E293B;
+  --color-surface-dim: #0B1120;
+  --color-on-background: #F8FAFC;
+  --color-on-surface: #F8FAFC;
+  --color-on-surface-variant: #94A3B8;
+  --color-outline: #475569;
+  --color-outline-variant: #334155;
+}
+
+/* Page background shifts from #F8FAFC / #f9f9f9 to deep obsidian #0B1120 */
+.dark body,
+.dark #root,
+.dark main,
+.dark .bg-\[\#f9f9f9\],
+.dark .bg-\[\#F8FAFC\],
+.dark .bg-surface,
+.dark .bg-background {
+  background-color: #0B1120 !important;
+  color: #F8FAFC;
+}
+
+/* Translucent headers and overlays in dark mode */
+.dark .bg-\[\#f9f9f9\]\/95,
+.dark .bg-white\/95,
+.dark .bg-white\/90 {
+  background-color: rgba(11, 17, 32, 0.95) !important;
+}
+
+/* Cards, tables, modals shift from #FFFFFF to #111827 */
+.dark .bg-white,
+.dark .bg-\[\#ffffff\],
+.dark .bg-surface-container-lowest,
+.dark aside,
+.dark dialog,
+.dark [role="dialog"] {
+  background-color: #111827 !important;
+  color: #F8FAFC;
+}
+
+/* Neutral secondary containers shift to #1E293B */
+.dark .bg-surface-container-low,
+.dark .bg-surface-container,
+.dark .bg-\[\#f3f3f4\],
+.dark .bg-\[\#eeeeee\],
+.dark .bg-\[\#e2e2e2\],
+.dark .bg-\[\#e8e8e8\],
+.dark .bg-surface-variant {
+  background-color: #1E293B !important;
+  color: #F8FAFC;
+}
+
+/* Primary text shifts to #F8FAFC */
+.dark [class*="text-[#1a1c1c]"],
+.dark [class*="text-[#0F172A]"],
+.dark [class*="text-[#111827]"],
+.dark .text-on-surface,
+.dark .text-on-background {
+  color: #F8FAFC !important;
+}
+
+/* Secondary muted text shifts to #94A3B8 */
+.dark [class*="text-[#444657]"],
+.dark [class*="text-[#747689]"],
+.dark [class*="text-[#475569]"],
+.dark [class*="text-[#64748B]"],
+.dark .text-on-surface-variant {
+  color: #94A3B8 !important;
+}
+
+/* Table row hovers shift to #1E293B */
+.dark table tbody tr:hover,
+.dark table tbody tr.hover\:bg-\[\#f9f9f9\]:hover,
+.dark table tbody tr.hover\:bg-slate-50:hover,
+.dark table tbody tr.hover\:bg-\[\#f3f3f4\]:hover,
+.dark .hover\:bg-\[\#f9f9f9\]:hover,
+.dark .hover\:bg-\[\#f3f3f4\]:hover,
+.dark .hover\:bg-\[\#eeeeee\]:hover,
+.dark .hover\:bg-surface-container:hover {
+  background-color: #1E293B !important;
+}
+
+/* Neo-Brutalist 2px borders & shadows shift to #334155 */
+.dark .brutal-border,
+.dark .brutal-border-b,
+.dark .brutal-border-r,
+.dark .brutal-border-t,
+.dark .brutal-border-thin,
+.dark [class*="border-[#0F172A]"],
+.dark [class*="border-[#111827]"],
+.dark [class*="border-[#e2e2e2]"],
+.dark [class*="border-[#c4c5da]"],
+.dark [class*="border-slate-200"],
+.dark [class*="border-slate-300"] {
+  border-color: #334155 !important;
+}
+
+.dark .brutal-shadow,
+.dark .neo-shadow,
+.dark .shadow-\[4px_4px_0px_\#111827\],
+.dark .shadow-\[4px_4px_0px_\#0F172A\] {
+  box-shadow: 4px 4px 0px #334155 !important;
+}
+
+.dark .brutal-shadow-sm,
+.dark .neo-shadow-sm,
+.dark .shadow-\[2px_2px_0px_\#111827\],
+.dark .shadow-\[2px_2px_0px_\#0F172A\] {
+  box-shadow: 2px 2px 0px #334155 !important;
+}
+
+.dark .shadow-\[3px_3px_0px_\#0F172A\],
+.dark .shadow-\[3px_3px_0px_\#111827\] {
+  box-shadow: 3px 3px 0px #334155 !important;
+}
+
+.dark .brutal-shadow-lg,
+.dark .shadow-\[6px_6px_0px_\#0F172A\],
+.dark .shadow-\[6px_6px_0px_\#111827\] {
+  box-shadow: 6px 6px 0px #334155 !important;
+}
+
+.dark .shadow-\[8px_8px_0px_\#0F172A\],
+.dark .shadow-\[8px_8px_0px_\#111827\] {
+  box-shadow: 8px 8px 0px #334155 !important;
+}
+
+.dark .shadow-\[4px_0px_0px_\#111827\],
+.dark .shadow-\[4px_0px_0px_\#0F172A\] {
+  box-shadow: 4px 0px 0px #334155 !important;
+}
+
+.dark .shadow-\[1px_1px_0px_\#0F172A\],
+.dark .shadow-\[1px_1px_0px_\#111827\] {
+  box-shadow: 1px 1px 0px #334155 !important;
+}
+
+.dark [class*="bg-[radial-gradient"] {
+  background-image: radial-gradient(#334155 1px, transparent 1px) !important;
+}
+
+.dark .brutal-btn-hover:hover {
+  box-shadow: 3px 3px 0px #334155 !important;
+}
+
+.dark .brutal-btn-active:active,
+.dark .neo-btn-press:active {
+  box-shadow: 0px 0px 0px #334155 !important;
+}
+
+/* Form inputs, selects, and search bars in dark mode: #0F172A bg, #F8FAFC text, #475569 border */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+.dark select,
+.dark textarea {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+  border-color: #475569 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+.dark select option {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #ACF847 !important;
+  box-shadow: 0 0 0 1px #ACF847 !important;
+  outline: none !important;
+}
+
+/* Preserve High-Contrast Accents: #ACF847 Neon Lime */
+.dark .bg-secondary-container,
+.dark .bg-\[\#acf847\],
+.dark [class*="bg-[#acf847]"] {
+  background-color: #ACF847 !important;
+}
+
+.dark .bg-secondary-container,
+.dark .bg-\[\#acf847\],
+.dark [class*="bg-[#acf847]"],
+.dark .bg-secondary-container *,
+.dark .bg-\[\#acf847\] *,
+.dark [class*="bg-[#acf847]"] * {
+  color: #0F172A !important;
+}
+
+/* Preserve High-Contrast Accents: #0033FF / #0024C1 Cobalt */
+.dark .bg-primary,
+.dark .bg-primary-container,
+.dark .bg-\[\#0033ff\],
+.dark .bg-\[\#0024c1\],
+.dark [class*="bg-[#0033ff]"],
+.dark [class*="bg-[#0024c1]"] {
+  background-color: #0033FF !important;
+  color: #FFFFFF !important;
+}
+
+.dark .bg-primary *,
+.dark .bg-primary-container *,
+.dark .bg-\[\#0033ff\] *,
+.dark .bg-\[\#0024c1\] *,
+.dark [class*="bg-[#0033ff]"] *,
+.dark [class*="bg-[#0024c1]"] * {
+  color: #FFFFFF !important;
+}
+
+/* Red / Error alert containers in dark mode */
+.dark .bg-\[\#ffdad6\],
+.dark .bg-error-container {
+  background-color: #450A0A !important;
+  color: #FCA5A5 !important;
+  border-color: #7F1D1D !important;
+}
+
+.dark .bg-\[\#ffdad6\] *,
+.dark .bg-error-container * {
+  color: #FCA5A5 !important;
 }
