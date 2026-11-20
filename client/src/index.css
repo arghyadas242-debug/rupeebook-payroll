@@ -202,21 +202,27 @@ html.dark {
   --color-surface-dim: #0B1120;
   --color-on-background: #F8FAFC;
   --color-on-surface: #F8FAFC;
-  --color-on-surface-variant: #94A3B8;
+  --color-on-surface-variant: #CBD5E1;
   --color-outline: #475569;
   --color-outline-variant: #334155;
 }
 
-/* Page background shifts from #F8FAFC / #f9f9f9 to deep obsidian #0B1120 */
+/* --------------------------------------------------------------------------
+   1. SURFACES & CONTAINERS
+   -------------------------------------------------------------------------- */
+
+/* Page canvas background -> #0B1120 */
 .dark body,
 .dark #root,
 .dark main,
 .dark .bg-\[\#f9f9f9\],
 .dark .bg-\[\#F8FAFC\],
+.dark [class*="bg-[#f9f9f9]"],
+.dark [class*="bg-[#F8FAFC]"],
+.dark [class*="bg-[#f8fafc]"],
 .dark .bg-surface,
 .dark .bg-background {
   background-color: #0B1120 !important;
-  color: #F8FAFC;
 }
 
 /* Translucent headers and overlays in dark mode */
@@ -226,48 +232,44 @@ html.dark {
   background-color: rgba(11, 17, 32, 0.95) !important;
 }
 
-/* Cards, tables, modals shift from #FFFFFF to #111827 */
+/* Primary cards, navbars, sidebars, modals & tables -> #111827 */
 .dark .bg-white,
 .dark .bg-\[\#ffffff\],
+.dark .bg-\[\#FFFFFF\],
+.dark [class*="bg-[#ffffff]"],
+.dark [class*="bg-[#FFFFFF]"],
 .dark .bg-surface-container-lowest,
 .dark aside,
+.dark header,
 .dark dialog,
-.dark [role="dialog"] {
+.dark [role="dialog"],
+.dark table,
+.dark tbody {
   background-color: #111827 !important;
-  color: #F8FAFC;
 }
 
-/* Neutral secondary containers shift to #1E293B */
+/* Nested stat boxes, sub-containers, table headers & hover rows -> #1E293B */
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-\[\#F1F5F9\],
+.dark .bg-\[\#f1f5f9\],
+.dark [class*="bg-[#F1F5F9]"],
+.dark [class*="bg-[#f1f5f9]"],
 .dark .bg-surface-container-low,
 .dark .bg-surface-container,
-.dark .bg-\[\#f3f3f4\],
-.dark .bg-\[\#eeeeee\],
-.dark .bg-\[\#e2e2e2\],
-.dark .bg-\[\#e8e8e8\],
-.dark .bg-surface-variant {
+.dark .bg-surface-variant,
+.dark [class*="bg-[#f3f3f4]"],
+.dark [class*="bg-[#eeeeee]"],
+.dark [class*="bg-[#e2e2e2]"],
+.dark [class*="bg-[#e8e8e8]"],
+.dark table thead,
+.dark table thead tr,
+.dark table thead th,
+.dark table th {
   background-color: #1E293B !important;
-  color: #F8FAFC;
 }
 
-/* Primary text shifts to #F8FAFC */
-.dark [class*="text-[#1a1c1c]"],
-.dark [class*="text-[#0F172A]"],
-.dark [class*="text-[#111827]"],
-.dark .text-on-surface,
-.dark .text-on-background {
-  color: #F8FAFC !important;
-}
-
-/* Secondary muted text shifts to #94A3B8 */
-.dark [class*="text-[#444657]"],
-.dark [class*="text-[#747689]"],
-.dark [class*="text-[#475569]"],
-.dark [class*="text-[#64748B]"],
-.dark .text-on-surface-variant {
-  color: #94A3B8 !important;
-}
-
-/* Table row hovers shift to #1E293B */
+/* Table row hovers -> #1E293B */
 .dark table tbody tr:hover,
 .dark table tbody tr.hover\:bg-\[\#f9f9f9\]:hover,
 .dark table tbody tr.hover\:bg-slate-50:hover,
@@ -275,61 +277,142 @@ html.dark {
 .dark .hover\:bg-\[\#f9f9f9\]:hover,
 .dark .hover\:bg-\[\#f3f3f4\]:hover,
 .dark .hover\:bg-\[\#eeeeee\]:hover,
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
 .dark .hover\:bg-surface-container:hover {
   background-color: #1E293B !important;
 }
 
-/* Neo-Brutalist 2px borders & shadows shift to #334155 */
+/* --------------------------------------------------------------------------
+   2. TYPOGRAPHY & TEXT CONTRAST
+   -------------------------------------------------------------------------- */
+
+/* Headings and primary dark text utilities -> crisp #F8FAFC */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-black,
+.dark .text-on-surface,
+.dark .text-on-background,
+.dark [class*="text-[#0F172A]"],
+.dark [class*="text-[#0f172a]"],
+.dark [class*="text-[#111827]"],
+.dark [class*="text-[#1a1c1c]"],
+.dark [class*="text-[#1A1C1C]"],
+.dark [class*="text-slate-900"],
+.dark [class*="text-slate-800"],
+.dark [class*="text-gray-900"],
+.dark [class*="text-black"] {
+  color: #F8FAFC !important;
+}
+
+/* Muted / secondary text utilities -> readable #CBD5E1 / #94A3B8 */
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-on-surface-variant,
+.dark [class*="text-slate-700"],
+.dark [class*="text-slate-600"],
+.dark [class*="text-slate-500"],
+.dark [class*="text-gray-600"],
+.dark [class*="text-gray-500"],
+.dark [class*="text-[#475569]"],
+.dark [class*="text-[#64748B]"],
+.dark [class*="text-[#64748b]"],
+.dark [class*="text-[#444657]"],
+.dark [class*="text-[#747689]"] {
+  color: #CBD5E1 !important;
+}
+
+/* Icons inherit high contrast text color */
+.dark .material-symbols-outlined,
+.dark svg {
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. BORDERS & SHADOWS
+   -------------------------------------------------------------------------- */
+
+/* Neo-Brutalist borders -> #475569 */
 .dark .brutal-border,
 .dark .brutal-border-b,
 .dark .brutal-border-r,
 .dark .brutal-border-t,
 .dark .brutal-border-thin,
+.dark .border-slate-900,
+.dark .border-slate-800,
 .dark [class*="border-[#0F172A]"],
+.dark [class*="border-[#0f172a]"],
 .dark [class*="border-[#111827]"],
+.dark [class*="border-slate-900"],
+.dark [class*="border-slate-800"],
 .dark [class*="border-[#e2e2e2]"],
 .dark [class*="border-[#c4c5da]"],
 .dark [class*="border-slate-200"],
 .dark [class*="border-slate-300"] {
-  border-color: #334155 !important;
+  border-color: #475569 !important;
 }
 
+/* Neo-Brutalist offset shadows -> #334155 */
+.dark [class*="shadow-"][class*="#0F172A"],
+.dark [class*="shadow-"][class*="#0f172a"],
+.dark [class*="shadow-"][class*="#111827"],
 .dark .brutal-shadow,
-.dark .neo-shadow,
-.dark .shadow-\[4px_4px_0px_\#111827\],
-.dark .shadow-\[4px_4px_0px_\#0F172A\] {
+.dark .neo-shadow {
   box-shadow: 4px 4px 0px #334155 !important;
 }
 
-.dark .brutal-shadow-sm,
-.dark .neo-shadow-sm,
 .dark .shadow-\[2px_2px_0px_\#111827\],
-.dark .shadow-\[2px_2px_0px_\#0F172A\] {
+.dark .shadow-\[2px_2px_0px_\#0F172A\],
+.dark .shadow-\[2px_2px_0px_\#0f172a\],
+.dark .brutal-shadow-sm,
+.dark .neo-shadow-sm {
   box-shadow: 2px 2px 0px #334155 !important;
 }
 
 .dark .shadow-\[3px_3px_0px_\#0F172A\],
+.dark .shadow-\[3px_3px_0px_\#0f172a\],
 .dark .shadow-\[3px_3px_0px_\#111827\] {
   box-shadow: 3px 3px 0px #334155 !important;
 }
 
+.dark .shadow-\[4px_4px_0px_\#111827\],
+.dark .shadow-\[4px_4px_0px_\#0F172A\],
+.dark .shadow-\[4px_4px_0px_\#0f172a\] {
+  box-shadow: 4px 4px 0px #334155 !important;
+}
+
 .dark .brutal-shadow-lg,
 .dark .shadow-\[6px_6px_0px_\#0F172A\],
+.dark .shadow-\[6px_6px_0px_\#0f172a\],
 .dark .shadow-\[6px_6px_0px_\#111827\] {
   box-shadow: 6px 6px 0px #334155 !important;
 }
 
 .dark .shadow-\[8px_8px_0px_\#0F172A\],
+.dark .shadow-\[8px_8px_0px_\#0f172a\],
 .dark .shadow-\[8px_8px_0px_\#111827\] {
   box-shadow: 8px 8px 0px #334155 !important;
 }
 
 .dark .shadow-\[4px_0px_0px_\#111827\],
-.dark .shadow-\[4px_0px_0px_\#0F172A\] {
+.dark .shadow-\[4px_0px_0px_\#0F172A\],
+.dark .shadow-\[4px_0px_0px_\#0f172a\] {
   box-shadow: 4px 0px 0px #334155 !important;
 }
 
 .dark .shadow-\[1px_1px_0px_\#0F172A\],
+.dark .shadow-\[1px_1px_0px_\#0f172a\],
 .dark .shadow-\[1px_1px_0px_\#111827\] {
   box-shadow: 1px 1px 0px #334155 !important;
 }
@@ -347,7 +430,10 @@ html.dark {
   box-shadow: 0px 0px 0px #334155 !important;
 }
 
-/* Form inputs, selects, and search bars in dark mode: #0F172A bg, #F8FAFC text, #475569 border */
+/* --------------------------------------------------------------------------
+   4. FORM INPUTS & SELECTS
+   -------------------------------------------------------------------------- */
+
 .dark input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
 .dark select,
 .dark textarea {
@@ -374,39 +460,79 @@ html.dark {
   outline: none !important;
 }
 
-/* Preserve High-Contrast Accents: #ACF847 Neon Lime */
+/* --------------------------------------------------------------------------
+   5. PRESERVE COLORED BADGES & BUTTONS (HIGHEST SPECIFICITY)
+   -------------------------------------------------------------------------- */
+
+/* Lime Badges & Buttons (#ACF847 / #acf847) */
 .dark .bg-secondary-container,
+.dark .bg-secondary-fixed,
 .dark .bg-\[\#acf847\],
-.dark [class*="bg-[#acf847]"] {
+.dark .bg-\[\#ACF847\],
+.dark [class*="bg-[#acf847]"],
+.dark [class*="bg-[#ACF847]"] {
   background-color: #ACF847 !important;
+  color: #0F172A !important;
+  border-color: #0F172A !important;
 }
 
-.dark .bg-secondary-container,
-.dark .bg-\[\#acf847\],
-.dark [class*="bg-[#acf847]"],
+/* All text, headings, icons, spans inside lime badges/rows must stay #0F172A */
 .dark .bg-secondary-container *,
+.dark .bg-secondary-fixed *,
 .dark .bg-\[\#acf847\] *,
-.dark [class*="bg-[#acf847]"] * {
+.dark .bg-\[\#ACF847\] *,
+.dark [class*="bg-[#acf847]"] *,
+.dark [class*="bg-[#ACF847]"] *,
+.dark [class*="bg-[#acf847]"] h1,
+.dark [class*="bg-[#acf847]"] h2,
+.dark [class*="bg-[#acf847]"] h3,
+.dark [class*="bg-[#acf847]"] h4,
+.dark [class*="bg-[#acf847]"] p,
+.dark [class*="bg-[#acf847]"] span,
+.dark [class*="bg-[#ACF847]"] h1,
+.dark [class*="bg-[#ACF847]"] h2,
+.dark [class*="bg-[#ACF847]"] h3,
+.dark [class*="bg-[#ACF847]"] h4,
+.dark [class*="bg-[#ACF847]"] p,
+.dark [class*="bg-[#ACF847]"] span,
+.dark [class*="bg-[#acf847]"] [class*="text-"],
+.dark [class*="bg-[#ACF847]"] [class*="text-"],
+.dark .text-on-secondary-fixed,
+.dark .text-on-secondary-container {
   color: #0F172A !important;
 }
 
-/* Preserve High-Contrast Accents: #0033FF / #0024C1 Cobalt */
+/* Cobalt Blue Badges & Buttons (#0033FF / #0033ff / #0024C1 / #0024c1) */
 .dark .bg-primary,
 .dark .bg-primary-container,
 .dark .bg-\[\#0033ff\],
+.dark .bg-\[\#0033FF\],
 .dark .bg-\[\#0024c1\],
+.dark .bg-\[\#0024C1\],
 .dark [class*="bg-[#0033ff]"],
-.dark [class*="bg-[#0024c1]"] {
+.dark [class*="bg-[#0033FF]"],
+.dark [class*="bg-[#0024c1]"],
+.dark [class*="bg-[#0024C1]"] {
   background-color: #0033FF !important;
   color: #FFFFFF !important;
 }
 
+/* All text, headings, icons inside cobalt blue buttons must stay #FFFFFF */
 .dark .bg-primary *,
 .dark .bg-primary-container *,
 .dark .bg-\[\#0033ff\] *,
+.dark .bg-\[\#0033FF\] *,
 .dark .bg-\[\#0024c1\] *,
+.dark .bg-\[\#0024C1\] *,
 .dark [class*="bg-[#0033ff]"] *,
-.dark [class*="bg-[#0024c1]"] * {
+.dark [class*="bg-[#0033FF]"] *,
+.dark [class*="bg-[#0024c1]"] *,
+.dark [class*="bg-[#0024C1]"] *,
+.dark [class*="bg-[#0033ff]"] [class*="text-"],
+.dark [class*="bg-[#0033FF]"] [class*="text-"],
+.dark [class*="bg-[#0024c1]"] [class*="text-"],
+.dark [class*="bg-[#0024C1]"] [class*="text-"],
+.dark .text-on-primary {
   color: #FFFFFF !important;
 }
 
